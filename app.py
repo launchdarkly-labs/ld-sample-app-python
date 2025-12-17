@@ -4,6 +4,12 @@ from flask import render_template
 from flask import make_response
 from flask import request
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv()
+
+with open("static/js/keys.js", "w") as f:
+    f.write('const clientKey = "' + os.environ["LD_CLIENT_KEY"] + '";')
 
 app = Flask(__name__)
 CORS(app)
@@ -49,9 +55,7 @@ def show_contact():
 
 @app.route("/api/banner")
 def home_page_banner():
-    primary_banner = ldclient.get().variation(
-        "banner-text", mycontext, "No banner text found!"
-    )
+    primary_banner = "Welcome to our website!"
     return {"primaryBanner": primary_banner}
 
 
