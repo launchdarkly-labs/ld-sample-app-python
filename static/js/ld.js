@@ -31,9 +31,6 @@ client.on('change', (settings) => {
     if (settings['release-home-page-slider']) {
         switchSlider(settings['release-home-page-slider'].current);
     }
-    if (settings['coffee-promo-1']) {
-        switchPromo(settings['coffee-promo-1'].current, 1);
-    }
     if (settings['coffee-promo-2']) {
         switchPromo(settings['coffee-promo-2'].current, 2);
     }
