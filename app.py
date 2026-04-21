@@ -71,14 +71,12 @@ def show_page():
     home_page_slider = ldclient.get().variation(
         "release-home-page-slider", mycontext, False
     )
-    coffee_promo_1 = True
     coffee_promo_2 = ldclient.get().variation("coffee-promo-2", mycontext, False)
     retval = make_response(
         render_template(
             "index.html",
             current_route_rule=current_route_rule,
             home_page_slider=home_page_slider,
-            coffee_promo_1=coffee_promo_1,
             coffee_promo_2=coffee_promo_2,
         )
     )
